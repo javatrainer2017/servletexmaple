@@ -18,6 +18,8 @@ public class HelloFilter implements Filter {
         testValue = "MyFirstFilterValue";
         servletRequest.setAttribute("test", testValue);
         filterChain.doFilter(servletRequest,servletResponse);
+        //XSS Cross side script
+        //Compression
     }
 
     public void destroy() {

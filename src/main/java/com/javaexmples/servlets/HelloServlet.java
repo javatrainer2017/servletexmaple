@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 /**
  * Created by javat on 3/29/2017.
  */
-public class HelloServlet extends GenericServlet implements SingleThreadModel{
+public class HelloServlet extends GenericServlet {
 
     int count = 0;
 
@@ -20,14 +20,14 @@ public class HelloServlet extends GenericServlet implements SingleThreadModel{
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         PrintWriter writer = servletResponse.getWriter();
         writer.println("<h1> Hello World</h1>");
-        try
-        {
-            Thread.sleep(5000);
-        }
-        catch (InterruptedException e)
-        {
-            //do nothing
-        }
+//        try
+//        {
+////            Thread.sleep(5000);
+//        }
+//        catch (InterruptedException e)
+//        {
+//            //do nothing
+//        }
         writer.println("The count is " + count++);
         writer.println("The request parameter is " + servletRequest.getAttribute("test"));
     }

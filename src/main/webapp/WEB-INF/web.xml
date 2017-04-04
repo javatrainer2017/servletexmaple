@@ -29,15 +29,7 @@
         <servlet-class>com.javaexmples.servlets.LoginServlet</servlet-class>
     </servlet>
 
-    <filter>
-        <filter-name>HelloSecondFilter</filter-name>
-        <filter-class>com.javaexmples.servlets.HelloSecondFilter</filter-class>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>HelloSecondFilter</filter-name>
-        <url-pattern>/servlets/hello</url-pattern>
-    </filter-mapping>
 
     <filter>
         <filter-name>HelloFilter</filter-name>
@@ -46,6 +38,16 @@
 
     <filter-mapping>
         <filter-name>HelloFilter</filter-name>
+        <url-pattern>/servlets/hello</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>HelloSecondFilter</filter-name>
+        <filter-class>com.javaexmples.servlets.HelloSecondFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>HelloSecondFilter</filter-name>
         <url-pattern>/servlets/hello</url-pattern>
     </filter-mapping>
 

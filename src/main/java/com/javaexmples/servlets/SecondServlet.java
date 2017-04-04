@@ -10,12 +10,13 @@ public class SecondServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String firstValue = (String) request.getAttribute("firstValue");
+        request.setAttribute("secondValue", "SecondServlet");
         HttpSession session =request.getSession(false);
         System.out.println(session.getAttribute("sessionAttribute"));
 
         if(firstValue == null)
         {
-            response.sendRedirect("/servletexample/first");
+            response.sendRedirect(  request.getServletContext().getContextPath() + "/first");
         }
         for(Cookie cookie : request.getCookies())
         {
@@ -25,5 +26,6 @@ public class SecondServlet extends HttpServlet {
 
         response.getWriter().println("Global Value found " + str);
         response.getWriter().println("Value found " + firstValue);
+        response.getWriter().println("Context path " + request.getServletContext().getContextPath());
     }
 }
